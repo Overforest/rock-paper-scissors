@@ -10,6 +10,15 @@ function getComputerChoice() {
 
 // A function that checks the winner => checkWinner()
 
+function checkWinner(playerSelection, computerSelection) {
+    if(playerSelection == computerSelection) {
+        return 'Tie';
+    } else if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'scissors' && computerSelection == 'paper') || (playerSelection == 'paper' && computerSelection == 'rock')) {
+        return 'Player';
+    } else {
+        return 'Computer';
+    }
+}
 // A function that plays a single round => playRound()
 
 // => game()
