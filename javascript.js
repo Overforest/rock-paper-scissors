@@ -25,11 +25,11 @@ function checkWinner(playerSelection, computerSelection) {
 function playRound(playerSelection, computerSelection) {
     const matchResult = checkWinner(playerSelection, computerSelection);
     if(matchResult == 'Tie') {
-        return "It's a Tie Game!";
+        return `It's a Tie Game! [Player ${playerScore} - ${computerScore} Computer]`;
     } else if(matchResult == 'Player') {
-        return `Player wins! ${playerSelection} beats ${computerSelection}` 
+        return `Player wins! ${playerSelection} beats ${computerSelection} [Player ${playerScore} - ${computerScore} Computer]` 
     } else {
-        return `Computer wins! ${computerSelection} beats ${playerSelection}`
+        return `Computer wins! ${computerSelection} beats ${playerSelection} [Player ${playerScore} - ${computerScore} Computer]`
     }
 }
 
@@ -51,11 +51,9 @@ function getPlayerChoice() {
     }
 }
 
-// => game()
+// A function for initializing the game => game()
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
         const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
@@ -71,14 +69,17 @@ function game() {
     }
     console.log("Game Over!")
     if(playerScore > computerScore) {
-        console.log("Player was the winner!")
+        console.log(`Player was the winner! [Player ${playerScore} - ${computerScore} Computer]`)
     } else if(computerScore > playerScore) {
-        console.log("Computer was the winner!")
+        console.log(`Computer was the winner! [Player ${playerScore} - ${computerScore} Computer]`)
     } else {
-        console.log("We have a tie!")
+        console.log(`We have a tie! [Player ${playerScore} - ${computerScore} Computer]`)
     }
      
 }
+
+let playerScore = 0;
+let computerScore = 0;
 
 game();
 
