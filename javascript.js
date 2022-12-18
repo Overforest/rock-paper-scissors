@@ -19,7 +19,21 @@ function checkWinner(playerSelection, computerSelection) {
         return 'Computer';
     }
 }
+
 // A function that plays a single round => playRound()
+
+function playRound(playerSelection, computerSelection) {
+    const matchResult = checkWinner(playerSelection, computerSelection);
+    if(matchResult == 'Tie') {
+        return "It's a Tie Game!";
+    } else if(matchResult == 'Player') {
+        return `Player wins! ${playerSelection} beats ${computerSelection}` 
+    } else {
+        return `Computer wins! ${computerSelection} beats ${playerSelection}`
+    }
+}
+
+//
 
 // => game()
 
