@@ -33,7 +33,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//
+// A function that gets an input choice from the player => getPlayerChoice()
+
+function getPlayerChoice() {
+    let validInput = false;
+    while(validInput == false) {
+        const options = ['rock', 'paper', 'scissors'];
+        const choice = prompt('Rock, Paper or Scissors?');
+        if (choice == null) {
+            continue;
+        }
+        const choiceInLower = choice.toLowerCase();
+        if(options.includes(choiceInLower)) {
+            validInput = true;
+            return choiceInLower;
+        }
+    }
+}
 
 // => game()
 
